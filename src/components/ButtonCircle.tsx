@@ -8,6 +8,7 @@ interface Props {
   bgcolor?: string;
   textcolor?: string;
   wrap?: boolean;
+  action: (numeroText: string) => void;
 }
 
 const button = ({
@@ -15,9 +16,10 @@ const button = ({
   bgcolor = '#2d2d2d',
   textcolor = 'white',
   wrap = false,
+  action,
 }: Props) => {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => action(text)}>
       <View
         style={{
           ...styles.btn,
